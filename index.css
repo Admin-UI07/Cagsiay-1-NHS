@@ -1,0 +1,1911 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+body{
+    background-color: white;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.wrapper{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.wrapper .sidebar{
+    position: fixed;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: rgb(36, 36, 36);
+    padding: 60px 0;
+    transition: all .5s;
+    z-index: 1000;
+}
+
+.wrapper .sidebar h2{
+    text-align: left;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.wrapper .sidebar img{
+    width: 80px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+.wrapper .sidebar img:hover{
+    width: 90px;
+}
+
+.wrapper .sidebar h2 a{
+    color: white;
+}
+
+.wrapper .sidebar h2 a:hover{
+    color: greenyellow;
+}
+
+.wrapper .sidebar ul li{
+    padding: 15px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.wrapper .sidebar ul li a{
+    color: white;
+    display: block;
+}
+
+.wrapper .sidebar ul li a .fa-solid{
+    width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+    background-color: rgb(60, 60, 60);
+    color:  greenyellow;
+}
+
+.wrapper .sidebar ul li:hover a{
+    color:  greenyellow;
+}
+
+.wrapper .sidebar .socialmedia{
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.wrapper .sidebar .socialmedia a{
+    display: block;
+    background: rgb(110, 110, 110);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 5px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 0.9px 2px;
+}
+
+.wrapper .sidebar .socialmedia a:hover{
+    width: 45px;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: fixed;
+    cursor: pointer;
+    background: rgb(110, 110, 110);
+    border-radius: 3px;
+    box-shadow: 0.7px 0.7px 3px;
+}
+
+label #btn{
+    z-index: 1112;
+    left: 7px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    padding: 3px 6px;
+    transition: all .5s;
+}
+label #cancel{
+    z-index: 1111;
+    left: -40px;
+    top: 10px;
+    color: white;
+    font-size: 20px;
+    padding: 3px 6px;
+    transition: all .5s ease;
+}
+
+#menu-toggle:checked ~ .wrapper .sidebar{
+    left: 0;
+}
+
+#menu-toggle:checked ~ label #btn{
+    left: 200px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#menu-toggle:checked ~ label #cancel{
+    left: 7px;
+}
+
+#menu-toggle:checked ~ header{
+    margin-left: 200px;
+}
+
+.box_area{
+    text-align: center;
+    margin-left: 0; /* Default state */
+    transition: margin-left 0.5s;
+    width: 100%;
+}
+
+.banner{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+header{
+    height: 50px;
+    background: rgb(36, 36, 36);
+    box-shadow: 0px 3px 3px;
+    width: 100%;
+    z-index: 1100;
+    position: fixed;
+}
+
+.logo{
+    position: absolute;
+    left: 4%;
+    top: 6px;
+    display: flex;
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.logo a:hover{
+    color: greenyellow;
+}
+
+nav{
+    position: absolute;
+    right: 1%;
+    top: 10px;
+    display: flex;
+}
+
+nav a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    display: block;
+    background: rgb(110, 110, 110);
+    width: 80px;
+    height: 30px; 
+    line-height: 30px;
+    text-align: center;
+    margin: 0 5px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 0.9px 2px;
+}
+
+nav a:hover{
+    width: 85px;
+}
+
+.hanger_area{
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 50px;
+    background-image: url(Research\ repository\ banner.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.context_area{
+    width: 100%;
+    position: relative;
+    top: 350px;
+    background: white;
+    border-top: 3px solid green;
+    height: auto;
+}
+
+.context_area .banner{
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-bottom: 3px solid green;
+}
+
+.context_area .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(255, 232, 20, 0.7),  /* Start color with 50% opacity */
+        rgba(102, 255, 97, 0.7)   /* End color with 50% opacity */
+     ),
+     url(C1NHS1.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.context_area .banner * {
+    position: relative;
+    z-index: 1; /* Ensure the text is above the background */
+}
+
+.context_area .banner p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.context_area .banner h2{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.slider {
+    width: 700px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin: 30px auto;
+    border-radius: 10px;
+    border: 2px solid green;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -23px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid green;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 5px;
+}
+
+.manual-btn:hover {
+    background: yellow;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 463px;
+    background-color: yellow;
+    padding: 10px;
+    box-shadow: -1px -1px 15px 2px;
+}
+
+.navigation-auto div{
+    border: 2px solid yellow;
+    padding: 5px;
+    border-radius: 50%;  
+    background-color: coral;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 5px;
+    justify-content: center;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: yellowgreen;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: yellowgreen;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: yellowgreen;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: yellowgreen;
+}
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background-color: yellowgreen;
+}
+
+.context_area .WEARE{
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: aliceblue;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+}
+
+.context_area .WEARE p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+.pinic{
+    width: 100%;
+    position: relative;
+    top: 30px;
+}
+
+.pinic h1{
+    color: #38761d; 
+    font-family: "Pacifico", system-ui; 
+    font-weight: 400; 
+    vertical-align: baseline;
+    overflow: visible;
+    
+}
+
+.picik{
+    position: relative;
+    width: 80%;
+    top: 30px;
+    margin: 30px auto;
+    justify-content: center;
+}
+
+.picik img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid green;
+}
+
+.pikik {
+    position: relative;
+    display: flex;
+    width: 60%;
+    top: 30px;
+    margin: 30px auto;
+    justify-content: center;
+}
+
+.pikik img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.bgui{
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    top: 10px;
+}
+
+.bgui h1{
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: 700; 
+}
+
+.bgue{
+    width: 100%;
+    position: relative;
+    top: 10px;
+}
+
+.bgue h1{
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: 700;
+}
+
+.footer{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    position: relative;
+    top: 25px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+}
+
+.footer p{
+    color: white;
+    position: relative;
+    font-weight: 600;
+    display: block;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+label{
+    outline: none; /* Removes the blue highlight */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper .sidebar ul li.activated{
+    color:  greenyellow;
+    background-color: rgb(60, 60, 60);
+}
+
+.wrapper .sidebar ul li a#actives{
+    color:  greenyellow;
+}
+
+/* --- RESEARCH AREA --- */
+
+.rahaha {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.rahaha h1{
+    padding: 50px;
+    font-size: 60px;
+    color: rgba(3, 139, 59, 1);
+    font-family: Roboto, Arial;
+    font-weight: 900;
+}
+
+.rehaha {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 30px;
+    background-color: rgba(3, 139, 59, 1);
+}
+
+.rehaha p{
+    font-size: 40px; 
+    color: white;
+    font-family: "Caveat", cursive;
+    font-weight: 600;
+    vertical-align: baseline;
+}
+
+.rappir{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapsi a{
+    color: rgba(3, 139, 59, 1);
+    text-decoration: underline;
+}
+
+.collapsi a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapsi{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapsi input{
+    display: none;
+}
+
+.collapsi label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapsi label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapsi input:checked ~ .collapsey{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapsi input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* second link */
+
+.rappie{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapset a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapset a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapset{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapset input{
+    display: none;
+}
+
+.collapset label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapset label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapseye {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapset input:checked ~ .collapseye{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapset input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapseye p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 3rd Link */
+
+.rap1{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse1 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse1 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse1{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse1 input{
+    display: none;
+}
+
+.collapse1 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse1 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey1 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse1 input:checked ~ .collapsey1{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse1 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey1 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 4th Link */
+
+.rap2{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse2 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse2 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse2{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse2 input{
+    display: none;
+}
+
+.collapse2 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse2 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey2 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse2 input:checked ~ .collapsey2{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse2 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey2 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 5th Link */
+
+.rap3{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse3 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse3 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse3{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse3 input{
+    display: none;
+}
+
+.collapse3 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse3 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey3 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse3 input:checked ~ .collapsey3{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse3 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey3 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 6th Link */
+
+.rap4{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse4 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse4 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse4{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse4 input{
+    display: none;
+}
+
+.collapse4 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse4 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey4 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse4 input:checked ~ .collapsey4{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse4 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey4 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 7th Link */
+
+.rap5{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse5 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse5 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse5{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse5 input{
+    display: none;
+}
+
+.collapse5 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse5 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey5 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse5 input:checked ~ .collapsey5{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse5 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey5 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 8th Link */
+
+.rap6{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse6 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse6 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse6{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse6 input{
+    display: none;
+}
+
+.collapse6 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse6 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey6 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse6 input:checked ~ .collapsey6{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse6 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey6 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 9th Link */
+
+.rap7{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse7 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse7 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse7{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse7 input{
+    display: none;
+}
+
+.collapse7 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse7 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey7 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse7 input:checked ~ .collapsey7{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse7 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey7 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 10th Link */
+
+.rap8{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse8 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse8 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse8{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse8 input{
+    display: none;
+}
+
+.collapse8 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse8 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey8 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse8 input:checked ~ .collapsey8{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse8 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey8 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 11th Link */
+
+.rap9{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse9 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse9 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse9{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse9 input{
+    display: none;
+}
+
+.collapse9 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse9 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey9 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse9 input:checked ~ .collapsey9{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse9 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey9 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 12th Link */
+
+.rap10{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse10 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse10 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse10{
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse10 input{
+    display: none;
+}
+
+.collapse10 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse10 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey10 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse10 input:checked ~ .collapsey10{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse10 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey10 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 13th Link */
+
+.rap11{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse11 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse11 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse11 {
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse11 input{
+    display: none;
+}
+
+.collapse11 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse11 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey11 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse11 input:checked ~ .collapsey11{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse11 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey11 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 14th Link */
+
+.rap12{
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+.collapse12 a{
+    text-decoration: underline;
+    color: rgba(3, 139, 59, 1);
+}
+
+.collapse12 a:hover{
+    color: rgb(255, 149, 0);
+}
+
+.collapse12 {
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapse12 input{
+    display: none;
+}
+
+.collapse12 label{
+    position: relative;
+    font-weight: 600;
+    color: rgba(3, 139, 59, 1);
+    display: block;
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+}
+
+.collapse12 label::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 20px;
+    height: 18px;
+    background: url(arrow.svg) no-repeat 0 0;
+    cursor: pointer;
+}
+
+.collapsey12 {
+    max-height: 1px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    padding: 0 10px;
+    position: relative;
+    text-align: justify;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.collapse12 input:checked ~ .collapsey12{
+    max-height: 1000px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: justify;
+    opacity: 1;
+    top: 0;
+}
+
+.collapse12 input:checked + label::after{
+    transform: rotate(180deg);
+    position: absolute;
+    right: 7px;
+    top: 28px;
+}
+
+.collapsey12 p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Contact Us */
+
+.adress {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 30px;
+}
+
+.adress address{
+    width: 700px;
+}
+
+.map {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    gap: 30px;
+}
+
+.map iframe {
+    width: 1000px;
+    border: 2px solid;
+}
+
+.googleform {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    
+}
+
+.googleform iframe {
+    width: 800px;
+    border: 2px solid;
+}
+
+.wilm {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.wilm img{
+    width: 400px;
+}
+
+.googleform a{
+    text-align: center;
+    background-color: yellowgreen;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+}
+
+.googleform a:hover{
+    margin: 12px;
+    padding: 12px;
+    color: white;
+}
+
+.SOONET {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 250px;
+}
+
+.SOONET a{
+    color: black;
+    text-decoration: underline;
+}
+
+.SOONET a:hover{
+    color: darkgoldenrod;
+}
+
+@media screen and (max-width: 768px) {
+    .context_area .banner{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .context_area{
+        top: 250px;
+    }
+
+    .logo a{
+        font-size: 24px;
+        margin-top: 4px;
+        margin-left: 30px;
+    }
+
+    nav a{
+        width: 50px;
+        font-size: 10px;
+    }
+
+    nav a:hover{
+        width: 55px;
+    }
+
+    .hanger_area{
+        height: 200px;
+    }
+
+    .slider{
+        width: 80%;
+        height: 200px;
+    }
+    
+    .navigation-auto{
+        margin-top: 163px;
+    }
+
+    .context_area .WEARE{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .bgui h1{
+        font-size: 15px;
+    }
+
+    .bgue h1{
+        font-size: 15px;
+    }
+
+    .pikik {
+        top: 10px;
+        width: 80%;
+    }
+
+    .bgue{
+        width: 100%;
+        position: relative;
+        top: -10px;
+    }
+
+    .context_area{
+        height: 1800px;
+    }
+
+    .footer{
+        position: relative;
+        top: 40px;
+        background-color: rgb(36, 36, 36);
+        padding: 20px;
+    }
+
+    .footer p{
+        color: white;
+        font-size: 10px
+    }
+
+    .adress {
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .adress address{
+        width: 100%;
+        font-size: 10px;
+    }
+    
+    .map {
+        padding: 10px;
+    }
+    
+    .map iframe {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+    
+    .googleform {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .googleform iframe {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .wilm {
+        padding: 30px;
+        font-size: 15px;
+    }
+}
