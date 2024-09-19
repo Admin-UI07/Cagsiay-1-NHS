@@ -311,6 +311,7 @@ nav a:hover{
 .slide img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .navigation-manual{
