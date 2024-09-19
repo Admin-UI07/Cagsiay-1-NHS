@@ -23,7 +23,7 @@ body{
 
 .wrapper .sidebar{
     position: fixed;
-    left: -200px;
+    transform: translateX(-100%);
     width: 200px;
     height: 100%;
     background: rgb(36, 36, 36);
@@ -137,7 +137,7 @@ label #cancel{
 }
 
 #menu-toggle:checked ~ .wrapper .sidebar{
-    left: 0;
+    transform: translateX(0);
 }
 
 #menu-toggle:checked ~ label #btn{
@@ -185,7 +185,7 @@ header{
 .logo a{
     text-decoration: none;
     font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Times New Roman', Times, serif, sans-serif;
     color: white;
     letter-spacing: 2px;
 }
