@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <input type="checkbox" id="menu-toggle">
+        <input type="checkbox" id="menu-toggle" checked>
         <label for="menu-toggle">
             <i class="fas fa-bars" id="btn"></i>
             <i class="fas fa-times" id="cancel"></i>
@@ -135,4 +135,14 @@
             </div>
         </div>
     </body>
+
+    <script>
+        window.onload = function() {
+            // Automatically uncheck the checkbox after 1 second
+            setTimeout(function() {
+                document.getElementById('menu-toggle').checked = false;
+            }, 1500); // 1000 milliseconds = 1 second
+        };
+    </script>
+    
 </html>
