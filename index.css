@@ -44,10 +44,6 @@ body{
     margin-bottom: 15px;
 }
 
-.wrapper .sidebar img:hover{
-    width: 90px;
-}
-
 .wrapper .sidebar h2 a{
     color: white;
 }
