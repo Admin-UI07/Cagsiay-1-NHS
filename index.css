@@ -278,120 +278,59 @@ nav a:hover{
     font-family: 'Times New Roman', Times, serif;
 }
 
-.slider {
-    width: 700px;
-    height: 500px;
-    position: relative;
+.expand {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    margin: 30px auto;
-    border-radius: 10px;
-    border: 2px solid green;
+    height: 70vh;
 }
 
-.slides {
-    width: 500%;
-    height: 100%;
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-.slides input {
-    display: none;
-}
-
-.slide {
-    width: 20%;
-    transition: 0.6s;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.navigation-manual{
-    position: absolute;
-    width: 100%;
-    margin-top: -23px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn{
-    border: 2px solid green;
-    padding: 5px;
-    border-radius: 50%;
+.panel {
+    position: relative;
+    height: 60vh;
+    border-radius: 50px;
+    color: white;
+    flex: 0.1;
+    margin: 5px;
+    overflow: hidden; /* Ensure the image stays within bounds */
+    transition: all 0.4s ease-in-out;
+    border: solid 2px rgb(0, 88, 0);
     cursor: pointer;
-    transition: 0.5s;
 }
 
-.manual-btn:not(:last-child){
-    margin-right: 5px;
+.panel:hover {
+    flex: 0.5;
 }
 
-.manual-btn:hover {
-    background: yellow;
-}
-
-#radio1:checked ~ .first {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-    margin-left: -20%;
-}
-
-#radio3:checked ~ .first {
-    margin-left: -40%;
-}
-
-#radio4:checked ~ .first {
-    margin-left: -60%;
-}
-
-#radio5:checked ~ .first {
-    margin-left: -80%;
-}
-
-.navigation-auto{
-    position: absolute;
+.panel img {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 463px;
-    background-color: yellow;
-    padding: 10px;
-    box-shadow: -1px -1px 15px 2px;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.4s ease-in-out;
 }
 
-.navigation-auto div{
-    border: 2px solid yellow;
-    padding: 5px;
-    border-radius: 50%;  
-    background-color: coral;
+.panel:hover img {
+    transform: scale(1.1); 
 }
 
-.navigation-auto div:not(:last-child){
-    margin-right: 5px;
-    justify-content: center;
+.panel h1 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    text-shadow: 1px 1px 1px black;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background-color: yellowgreen;
+.panel:hover h1 {
+    opacity: 1; 
 }
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background-color: yellowgreen;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background-color: yellowgreen;
-}
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background-color: yellowgreen;
-}
-#radio5:checked ~ .navigation-auto .auto-btn5{
-    background-color: yellowgreen;
-}
+
 
 .context_area .WEARE{
     position: relative;
@@ -438,6 +377,7 @@ nav a:hover{
     display: block;
     border-radius: 10px;
     border: 2px solid green;
+    box-shadow: 0 0 5px 0;
 }
 
 .pikik {
@@ -452,7 +392,7 @@ nav a:hover{
 .pikik img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 7px;
 }
 
@@ -483,8 +423,8 @@ nav a:hover{
     display: flex;
     padding: 10px;
     justify-content: center;
-    position: relative;
-    top: 25px;
+    position: relative;   
+    top: 5px;
     width: 100%;
     background-color: rgb(36, 36, 36);
 }
@@ -537,6 +477,30 @@ label{
     font-weight: 900;
 }
 
+.rahahaha {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(94, 255, 0, 0.5), rgba(255, 251, 0, 0.436));
+    border-bottom: 5px solid rgba(3, 139, 59, 1);
+}
+
+.rahahaha h1{
+    padding: 50px;
+    font-size: 60px;
+    color: rgba(3, 139, 59, 1);
+    font-family: Roboto, Arial;
+    font-weight: 900;
+}
+
+.rahahaha h1 a {
+    color: rgba(3, 139, 59, 1);
+}
+
+.rahahaha h1 a:hover {
+    text-decoration: underline;
+}
+
 .rehaha {
     width: 100%;
     text-align: center;
@@ -548,6 +512,22 @@ label{
 .rehaha p{
     font-size: 40px; 
     color: white;
+    font-family: "Caveat", cursive;
+    font-weight: 600;
+    vertical-align: baseline;
+}
+
+.rehahaha {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 60px;
+    text-shadow: 0 0 5px greenyellow;
+}
+
+.rehahaha p{
+    font-size: 40px; 
+    color: rgba(3, 139, 59, 1);
     font-family: "Caveat", cursive;
     font-weight: 600;
     vertical-align: baseline;
@@ -573,6 +553,7 @@ label{
     max-width: 90%;
     overflow: hidden;
     font-weight: 500;
+    position: relative;
 }
 
 .collapsi input{
@@ -1701,30 +1682,60 @@ label{
 
 /* Contact Us */
 
-.adress {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    padding: 30px;
+.raha {
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
-.adress address{
-    width: 700px;
+.raha h1{
+    padding: 30px;
+    font-size: 60px;
+    color: rgba(3, 139, 59, 1);
+    font-family: Roboto, Arial;
+    font-weight: 900;
+}
+
+.adress {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack addresses vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    width: 100%; /* Full width of the parent */
+    text-align: center; /* Center the text */
+    padding-bottom: 30px;
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    line-height: 25px;
+}
+
+.adress .header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 .map {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap; /* Make it responsive */
     justify-content: center;
-    align-items: center;
+    gap: 20px; /* Space between items */
     width: 100%;
-    padding: 30px;
-    gap: 30px;
 }
 
 .map iframe {
-    width: 1000px;
+    width: 100%;
+    max-width: 500px; /* Make it responsive */
     border: 2px solid;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0;
+    transition: 0.3s;
+}
+
+#ifone:hover {
+    transform: scale(1.009);
+}
+
+#iftwo:hover {
+    transform: scale(1.009);
 }
 
 .googleform {
@@ -1732,13 +1743,14 @@ label{
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 30px;
-    
+    padding: 30px;  
 }
 
 .googleform iframe {
     width: 800px;
     border: 2px solid;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 0;
 }
 
 .wilm {
@@ -1752,21 +1764,28 @@ label{
 
 .wilm img{
     width: 400px;
+    cursor: pointer;
 }
 
 .googleform a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     background-color: yellowgreen;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
     color: black;
+    border: solid;
+    transition: 0.3s;
 }
 
 .googleform a:hover{
-    margin: 12px;
-    padding: 12px;
-    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 0 5px 0 black;
+    border: solid black;
+    color: rgb(124, 101, 0);
+    text-decoration: underline;
+    transform: scale(1.009);
 }
 
 .SOONET {
@@ -1784,6 +1803,73 @@ label{
 .SOONET a:hover{
     color: darkgoldenrod;
 }
+
+.organize {
+    display: grid; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+
+.repo {
+    position: relative; 
+    margin: 10px; 
+    border: solid black;
+    overflow: hidden;
+}
+
+.repo img {
+    display: block; 
+    width: 100%; 
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.repo:hover img {
+    filter: brightness(0.2);
+    transform: scale(1.1); 
+}
+
+.repo::before {
+    content: ""; /* Creates the pseudo-element */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 0; 
+    height: 100%;
+    background: rgba(0, 255, 89, 0.5); /* Change to your desired gradient */
+    background: linear-gradient(to bottom, rgba(94, 255, 0, 0.5), rgba(255, 251, 0, 0.436)); /* Example gradient */
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.repo:hover::before {
+    width: 100%;
+}
+
+.repo h1 {
+    font-size: 40px;
+    position: absolute; 
+    color: white;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.repo:hover h1 {
+    opacity: 1;
+}
+
+.repo h1:hover {
+    color: gold;
+    text-shadow: 0 0 8px black;
+    text-decoration: underline;
+}
+
 
 @media screen and (max-width: 768px) {
     .context_area .banner{
@@ -1870,7 +1956,7 @@ label{
 
     .adress {
         width: 100%;
-        padding: 30px;
+        padding: 10px;
     }
     
     .adress address{
@@ -1894,6 +1980,7 @@ label{
         align-items: center;
         width: 100%;
         padding: 30px;
+        text-decoration: underline;
     }
     
     .googleform iframe {
@@ -1904,5 +1991,99 @@ label{
     .wilm {
         padding: 30px;
         font-size: 15px;
+    }
+
+    .expand {
+        height: 40vh;
+    }
+
+    .panel {
+        height: 30vh;
+        border-radius: 10px;
+        margin: 2px;
+    }
+
+    .panel h1{
+        font-size: 7px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .panel:hover img{
+        transform: translateX();
+    }
+
+    .rahahaha h1{
+        padding: 50px;
+        font-size: 35px;
+        color: rgba(3, 139, 59, 1);
+        font-family: Roboto, Arial;
+        font-weight: 900;
+    }
+
+    .raha h1{
+        padding: 30px;
+        font-size: 35px;
+        color: rgba(3, 139, 59, 1);
+        font-family: Roboto, Arial;
+        font-weight: 900;
+    }
+
+    .organize {
+        display: grid; 
+        justify-content: center; 
+        align-items: center;
+        overflow: hidden;
+        height: 40vh;
+    }
+    
+    .repo {
+        position: relative; 
+        margin: 10px; 
+        border: solid black;
+        overflow: hidden;
+    }
+    
+    .repo img {
+        display: block; 
+        width: 100%; 
+        height: auto;
+        filter: brightness(0.2);
+        transition: all 0.5s ease;
+    }
+    
+    .repo::before {
+        content: ""; /* Creates the pseudo-element */
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+        background: rgba(0, 255, 89, 0.5); /* Change to your desired gradient */
+        background: linear-gradient(to bottom, rgba(94, 255, 0, 0.5), rgba(255, 251, 0, 0.436)); /* Example gradient */
+        z-index: 1;
+        transition: all 0.5s ease;
+    }
+    
+    .repo h1 {
+        font-size: 20px;
+        position: absolute; 
+        color: white;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        text-align: center; 
+        opacity: 1;
+        z-index: 2;
+        text-shadow: 0 0 8px black;
+        text-decoration: underline;
+    }
+    
+    .repo:hover h1 {
+        opacity: 1;
+    }
+    
+    .repo h1:hover {
+        color: gold;
     }
 }
